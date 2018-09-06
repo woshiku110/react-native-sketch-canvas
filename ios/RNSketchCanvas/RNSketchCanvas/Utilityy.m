@@ -1,18 +1,18 @@
 //
-//  Utility.m
+//  Utilityy.m
 //  RNSketchCanvas
 //
 //  Created by TERRY on 2018/5/8.
 //  Copyright © 2018年 Terry. All rights reserved.
 //
 
-#import "Utility.h"
+#import "Utilityy.h"
 
 CGPoint midPoint (CGPoint p1, CGPoint p2) {
     return CGPointMake((p1.x + p2.x) * 0.5, (p1.y + p2.y) * 0.5);
 }
 
-@implementation Utility
+@implementation Utilityy
 
 + (void)addPointToPath: (UIBezierPath*)path
                toPoint: (CGPoint)point

@@ -1,5 +1,5 @@
 //
-//  Utility.h
+//  Utilityy.h
 //  RNSketchCanvas
 //
 //  Created by TERRY on 2018/5/8.
@@ -12,7 +12,7 @@
 
 CGPoint midPoint (CGPoint p1, CGPoint p2);
 
-@interface Utility : NSObject
+@interface Utilityy : NSObject
 
 + (void)addPointToPath: (UIBezierPath*)path
                toPoint: (CGPoint)point

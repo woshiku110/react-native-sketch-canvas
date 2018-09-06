@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE0C99801F32D596001BDE8B /* RNSketchData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C997F1F32D596001BDE8B /* RNSketchData.m */; };
 		DEB694891F322F2A00DC6841 /* RNSketchCanvasManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB694861F322F2A00DC6841 /* RNSketchCanvasManager.m */; };
-		DED3A13720A4159A00D72FBF /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DED3A13520A4159A00D72FBF /* Utility.m */; };
+		DED3A13720A4159A00D72FBF /* Utilityy.m in Sources */ = {isa = PBXBuildFile; fileRef = DED3A13520A4159A00D72FBF /* Utilityy.m */; };
 		DEFBA25D1F322B6000A4545C /* RNSketchCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFBA25C1F322B6000A4545C /* RNSketchCanvas.m */; };
 		DEFBA25E1F322B6000A4545C /* RNSketchCanvas.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEFBA25B1F322B6000A4545C /* RNSketchCanvas.h */; };
 /* End PBXBuildFile section */
@@ -32,8 +32,8 @@
 		DE0C997F1F32D596001BDE8B /* RNSketchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSketchData.m; sourceTree = "<group>"; };
 		DEB694851F322F2A00DC6841 /* RNSketchCanvasManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSketchCanvasManager.h; sourceTree = "<group>"; };
 		DEB694861F322F2A00DC6841 /* RNSketchCanvasManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSketchCanvasManager.m; sourceTree = "<group>"; };
-		DED3A13520A4159A00D72FBF /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		DED3A13620A4159A00D72FBF /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		DED3A13520A4159A00D72FBF /* Utilityy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilityy.m; sourceTree = "<group>"; };
+		DED3A13620A4159A00D72FBF /* Utilityy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilityy.h; sourceTree = "<group>"; };
 		DEFBA2581F322B6000A4545C /* libRNSketchCanvas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSketchCanvas.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFBA25B1F322B6000A4545C /* RNSketchCanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNSketchCanvas.h; sourceTree = "<group>"; };
 		DEFBA25C1F322B6000A4545C /* RNSketchCanvas.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSketchCanvas.m; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 				DEFBA25C1F322B6000A4545C /* RNSketchCanvas.m */,
 				DE0C997E1F32D596001BDE8B /* RNSketchData.h */,
 				DE0C997F1F32D596001BDE8B /* RNSketchData.m */,
-				DED3A13620A4159A00D72FBF /* Utility.h */,
-				DED3A13520A4159A00D72FBF /* Utility.m */,
+				DED3A13620A4159A00D72FBF /* Utilityy.h */,
+				DED3A13520A4159A00D72FBF /* Utilityy.m */,
 			);
 			path = RNSketchCanvas;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFBA25D1F322B6000A4545C /* RNSketchCanvas.m in Sources */,
-				DED3A13720A4159A00D72FBF /* Utility.m in Sources */,
+				DED3A13720A4159A00D72FBF /* Utilityy.m in Sources */,
 				DE0C99801F32D596001BDE8B /* RNSketchData.m in Sources */,
 				DEB694891F322F2A00DC6841 /* RNSketchCanvasManager.m in Sources */,
 			);

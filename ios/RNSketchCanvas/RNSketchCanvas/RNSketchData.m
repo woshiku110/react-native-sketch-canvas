@@ -7,7 +7,7 @@
 //
 
 #import "RNSketchData.h"
-#import "Utility.h"
+#import "Utilityy.h"
 
 @interface RNSketchData ()
 
@@ -32,7 +32,7 @@
         _strokeWidth = strokeWidth;
         _points = [NSMutableArray new];
         _isTranslucent = CGColorGetComponents(strokeColor.CGColor)[3] != 1.0 &&
-            ![Utility isSameColor:strokeColor color:[UIColor clearColor]];
+            ![Utilityy isSameColor:strokeColor color:[UIColor clearColor]];
         _path = _isTranslucent ? [UIBezierPath new] : nil;
         _dirty = CGRectZero;
     }
@@ -47,7 +47,7 @@
         _strokeWidth = strokeWidth;
         _points = [points mutableCopy];
         _isTranslucent = CGColorGetComponents(strokeColor.CGColor)[3] != 1.0 &&
-            ![Utility isSameColor:strokeColor color:[UIColor clearColor]];
+            ![Utilityy isSameColor:strokeColor color:[UIColor clearColor]];
         _path = _isTranslucent ? [self evaluatePath] : nil;
         _dirty = CGRectZero;
     }
@@ -63,17 +63,17 @@
 
     if (_isTranslucent) {
         if (pointsCount >= 3) {
-            [Utility addPointToPath: _path
+            [Utilityy addPointToPath: _path
                             toPoint: point
                       tertiaryPoint: [_points[_points.count - 3] CGPointValue]
                       previousPoint:[_points[_points.count - 2] CGPointValue]];
         } else if (pointsCount >= 2) {
-            [Utility addPointToPath: _path
+            [Utilityy addPointToPath: _path
                             toPoint: point
                       tertiaryPoint: [_points[0] CGPointValue]
                       previousPoint: [_points[0] CGPointValue]];
         } else {
-            [Utility addPointToPath: _path toPoint: point tertiaryPoint: point previousPoint: point];
+            [Utilityy addPointToPath: _path toPoint: point tertiaryPoint: point previousPoint: point];
         }
         
         CGFloat x = point.x, y = point.y;
@@ -139,7 +139,7 @@
         return;
     };
 
-    BOOL isErase = [Utility isSameColor:_strokeColor color:[UIColor clearColor]];
+    BOOL isErase = [Utilityy isSameColor:_strokeColor color:[UIColor clearColor]];
 
     CGContextSetStrokeColorWithColor(context, _strokeColor.CGColor);
     CGContextSetLineWidth(context, _strokeWidth);
