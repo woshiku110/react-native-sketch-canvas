@@ -43,6 +43,8 @@ export default class RNSketchCanvas extends React.Component {
     savePreference: PropTypes.func,
     onSketchSaved: PropTypes.func,
 
+    onShareClickCallback: PropTypes.func,
+
     text: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string,
       font: PropTypes.string,
@@ -111,6 +113,7 @@ export default class RNSketchCanvas extends React.Component {
 
     savePreference: null,
     onSketchSaved: () => { },
+    onShareClickCallback: () => { },
 
     text: null,
     localSourceImage: null,
@@ -161,6 +164,12 @@ export default class RNSketchCanvas extends React.Component {
         true, true, false)
     }
   }
+  saveShare = (p) => {
+    if(p) {
+      this._sketchCanvas.save(p.imageType, p.transparent, p.folder ? p.folder : '', p.filename, p.includeImage !== false, p.includeText !== false, p.cropToImageSize || false)
+    }
+    
+  }
 
   nextStrokeWidth() {
     if ((this.state.strokeWidth >= this.props.maxStrokeWidth && this._strokeWidthStep > 0) ||
@@ -170,7 +179,7 @@ export default class RNSketchCanvas extends React.Component {
   }
 
   _renderItem = ({ item, index }) => (
-    <TouchableOpacity style={{ marginHorizontal: 2.5 }} onPress={() => {
+    <TouchableOpacity style={{ marginHorizontal: 2.5}} onPress={() => {
       if (this.state.color === item.color) {
         const index = this.props.alphlaValues.indexOf(this.state.alpha)
         if (this._alphaStep < 0) {
@@ -242,6 +251,14 @@ export default class RNSketchCanvas extends React.Component {
                 {this.props.saveComponent}
               </TouchableOpacity>)
             }
+            {this.props.shareComponent && (
+              <TouchableOpacity onPress={() => {
+                const saveFunc = this.saveShare
+                this.props.onShareClickCallback(saveFunc)
+               }}>
+              {this.props.shareComponent}
+              </TouchableOpacity>
+            )}
           </View>
         </View>
         <SketchCanvas
