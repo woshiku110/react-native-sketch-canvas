@@ -213,6 +213,36 @@ export default class RNSketchCanvas extends React.Component {
   render() {
     return (
       <View style={this.props.containerStyle}>
+
+       <View style={{ flexDirection: 'row' }}>
+          <FlatList
+            data={this.props.strokeColors}
+            extraData={this.state}
+            keyExtractor={() => Math.ceil(Math.random() * 10000000).toString()}
+            renderItem={this._renderItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          />
+        </View>
+
+        
+        <SketchCanvas
+          ref={ref => this._sketchCanvas = ref}
+          style={this.props.canvasStyle}
+          strokeColor={this.state.color + (this.state.color.length === 9 ? '' : this.state.alpha)}
+          onStrokeStart={this.props.onStrokeStart}
+          onStrokeChanged={this.props.onStrokeChanged}
+          onStrokeEnd={this.props.onStrokeEnd}
+          user={this.props.user}
+          strokeWidth={this.state.strokeWidth}
+          onSketchSaved={(success, path) => this.props.onSketchSaved(success, path)}
+          onPathsChange={this.props.onPathsChange}
+          text={this.props.text}
+          localSourceImage={this.props.localSourceImage}
+          permissionDialogTitle={this.props.permissionDialogTitle}
+          permissionDialogMessage={this.props.permissionDialogMessage}
+        />
+
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'flex-start' }}>
             {this.props.closeComponent && (
@@ -261,32 +291,7 @@ export default class RNSketchCanvas extends React.Component {
             )}
           </View>
         </View>
-        <SketchCanvas
-          ref={ref => this._sketchCanvas = ref}
-          style={this.props.canvasStyle}
-          strokeColor={this.state.color + (this.state.color.length === 9 ? '' : this.state.alpha)}
-          onStrokeStart={this.props.onStrokeStart}
-          onStrokeChanged={this.props.onStrokeChanged}
-          onStrokeEnd={this.props.onStrokeEnd}
-          user={this.props.user}
-          strokeWidth={this.state.strokeWidth}
-          onSketchSaved={(success, path) => this.props.onSketchSaved(success, path)}
-          onPathsChange={this.props.onPathsChange}
-          text={this.props.text}
-          localSourceImage={this.props.localSourceImage}
-          permissionDialogTitle={this.props.permissionDialogTitle}
-          permissionDialogMessage={this.props.permissionDialogMessage}
-        />
-        <View style={{ flexDirection: 'row' }}>
-          <FlatList
-            data={this.props.strokeColors}
-            extraData={this.state}
-            keyExtractor={() => Math.ceil(Math.random() * 10000000).toString()}
-            renderItem={this._renderItem}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
+       
       </View>
     );
   }
