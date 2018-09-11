@@ -85,15 +85,19 @@ export default class RNSketchCanvas extends React.Component {
     strokeWidthComponent: null,
 
     strokeColors: [
-      { color: '#000000' },
       { color: '#FF0000' },
+      { color: '#FF8000' },
+      { color: '#FFFF00' },
       { color: '#00FFFF' },
+      { color: '#82FF00'},
+      { color: '#00FF00' },
+      { color: '#00FF80' },
+      { color: '#00FFFF' },
+      { color: '#0080FF' },
       { color: '#0000FF' },
       { color: '#0000A0' },
       { color: '#ADD8E6' },
       { color: '#800080' },
-      { color: '#FFFF00' },
-      { color: '#00FF00' },
       { color: '#FF00FF' },
       { color: '#FFFFFF' },
       { color: '#C0C0C0' },
@@ -102,7 +106,8 @@ export default class RNSketchCanvas extends React.Component {
       { color: '#A52A2A' },
       { color: '#800000' },
       { color: '#008000' },
-      { color: '#808000' }],
+      { color: '#808000' },
+      { color: '#000000' }],
     alphlaValues: ['33', '77', 'AA', 'FF'],
     defaultStrokeIndex: 0,
     defaultStrokeWidth: 3,
@@ -251,18 +256,20 @@ export default class RNSketchCanvas extends React.Component {
               </TouchableOpacity>)
             }
 
-            {this.props.eraseComponent && (
-              <TouchableOpacity onPress={() => { this.setState({ color: '#00000000' }) }}>
-                {this.props.eraseComponent}
-              </TouchableOpacity>)
-            }
-          </View>
-          <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'flex-end' }}>
-            {this.props.strokeWidthComponent && (
+             {this.props.strokeWidthComponent && (
               <TouchableOpacity onPress={() => { this.nextStrokeWidth() }}>
                 {this.props.strokeWidthComponent(this.state.strokeWidth)}
               </TouchableOpacity>)
             }
+
+            
+          </View>
+          <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'flex-end' }}>
+            {this.props.eraseComponent && (
+              <TouchableOpacity onPress={() => { this.setState({ color: '#00000000' }) }}>
+                {this.props.eraseComponent}
+              </TouchableOpacity>)
+            } 
 
             {this.props.undoComponent && (
               <TouchableOpacity onPress={() => { this.props.onUndoPressed(this.undo()) }}>
