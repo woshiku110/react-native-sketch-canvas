@@ -85,29 +85,18 @@ export default class RNSketchCanvas extends React.Component {
     strokeWidthComponent: null,
 
     strokeColors: [
-      { color: '#FF0000' },
+      { color: '#FF5252' },
       { color: '#FF8000' },
-      { color: '#FFFF00' },
-      { color: '#00FFFF' },
-      { color: '#82FF00'},
-      { color: '#00FF00' },
-      { color: '#00FF80' },
-      { color: '#00FFFF' },
+      { color: '#FBFB4E' },
+      { color: '#8DE82D' },
+      { color: '#32C564'},
+      { color: '#25E5E5' },
       { color: '#0080FF' },
-      { color: '#0000FF' },
-      { color: '#0000A0' },
-      { color: '#ADD8E6' },
-      { color: '#800080' },
-      { color: '#FF00FF' },
+      { color: '#673EE4' },
+      { color: '#D43FDF' },
       { color: '#FFFFFF' },
-      { color: '#C0C0C0' },
-      { color: '#808080' },
-      { color: '#FFA500' },
-      { color: '#A52A2A' },
-      { color: '#800000' },
-      { color: '#008000' },
-      { color: '#808000' },
-      { color: '#000000' }],
+      { color: '#999999' },
+      ],
     alphlaValues: ['33', '77', 'AA', 'FF'],
     defaultStrokeIndex: 0,
     defaultStrokeWidth: 3,
@@ -219,7 +208,7 @@ export default class RNSketchCanvas extends React.Component {
     return (
       <View style={this.props.containerStyle}>
 
-       <View style={{ flexDirection: 'row' }}>
+       <View style={{ flexDirection: 'row'}}>
           <FlatList
             data={this.props.strokeColors}
             extraData={this.state}
@@ -248,7 +237,7 @@ export default class RNSketchCanvas extends React.Component {
           permissionDialogMessage={this.props.permissionDialogMessage}
         />
 
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row'}}>
           <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'flex-start' }}>
             {this.props.closeComponent && (
               <TouchableOpacity onPress={() => { this.props.onClosePressed() }}>
