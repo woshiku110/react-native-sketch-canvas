@@ -399,7 +399,9 @@
 - (UIImage *)scaleImage:(UIImage *)originalImage toSize:(CGSize)size contentMode: (NSString*)mode
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGFloat f_scale = [[UIScreen mainScreen] scale];
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width * f_scale, size.height *f_scale, 8, size.width * f_scale * 4, colorSpace, kCGImageAlphaPremultipliedFirst);
+    CGContextScaleCTM(context, f_scale, f_scale);
     CGContextClearRect(context, CGRectMake(0, 0, size.width, size.height));
 
     CGRect targetRect = [Utilityy fillImageWithSize:originalImage.size toSize:size contentMode:mode];
